@@ -108,4 +108,9 @@ app.post('/', async (req, res) => {
   }
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'healthy', service: 'product-service' });
+});
+
 app.listen(3002, () => console.log('Product Service running on port 3002'));
